@@ -1,7 +1,30 @@
-import Weather from "./Weather";
 import './App.css';
+import Header from "./Header";
+import Form from "./Form";
 
-function App() {
+
+export default function WeatherApp() {
+  return (
+    <div className="App">
+      <div class="container">
+        <div class="row">
+          <div>
+            <Header />
+          </div>
+          <br />
+          <Form />
+          <br />
+          <div class="row weekly-weather" id="forecast"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+//export default App;
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -13,6 +36,4 @@ function App() {
       </header>
     </div>
   );
-}
-
-export default App;
+}*/
