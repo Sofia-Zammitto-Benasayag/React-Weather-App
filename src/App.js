@@ -17,6 +17,7 @@ export default function WeatherApp() {
           <div class="row weekly-weather" id="forecast"></div>
         </div>
       </div>
+      <footer>Check out the <a href="https://github.com/Sofia-Zammitto-Benasayag/react-weather-app">GitHub repository.</a></footer>
     </div>
   );
 }
