@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Weather from "./Weather.css";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
 
 export default function WeatherApp(props){
 const [weatherData, setWeatherData] = useState({ ready: false });
 function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
         ready: true,
         temperature: Math.round(response.data.main.temp),
         humidity: response.data.main.humidity,
-        date: "Sunday 12:30",
+        date: new Date(response.data.dt * 1000),
         iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
         wind: Math.round(response.data.wind.speed),
         city: response.data.name,
@@ -35,7 +35,9 @@ return(
             </form>
          <h1>{weatherData.city}</h1>
          <ul>
-             <li>{weatherData.date}</li>
+             <li>
+                <FormattedDate date={weatherData.date} />
+             </li>
              <li className="text-capitalize">{weatherData.description}</li>
          </ul>
          <div className="row mt-3">
