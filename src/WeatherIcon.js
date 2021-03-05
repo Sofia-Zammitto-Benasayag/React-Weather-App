@@ -24,10 +24,23 @@ export default function WeatherIcon(props) {
 
     };
   
+    const colorMapping = {
+        "01d": "goldenrod",
+        "01n": "navy",
+        "02d": "blue",
+        "02n": "black",
+        "09d": "dimgray",
+        "04d": "slategray",
+        "13d": "slateblue",
+        "050d": "steelblue",
+
+    };
+
+
  return (
     <ReactAnimatedWeather
     icon={codeMapping[props.code]}
-    color="blue"
+    color={colorMapping[props.color]}
     size={54}
     animate={true}
   />
