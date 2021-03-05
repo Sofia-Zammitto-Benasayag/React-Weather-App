@@ -13,7 +13,7 @@ function handleResponse(response) {
         temperature: Math.round(response.data.main.temp),
         humidity: response.data.main.humidity,
         date: new Date(response.data.dt * 1000),
-        iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+        icon: response.data.weather[0].icon,
         wind: Math.round(response.data.wind.speed),
         city: response.data.name,
         description: response.data.weather[0].description,
